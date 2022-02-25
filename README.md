@@ -21,25 +21,34 @@ Notes to self on how to work with this:
 - push merge commit to github (its fast forward!)
 
 ========
+
 system requirement
+
 brew install --cask xquartz
+
 sudo mv /usr/local/include/X11 /usr/local/include/X11_bak
+
 sudo ln -s /opt/X11/include/X11 /usr/local/include/X11
         
+
 sudo mv /usr/local/include/GL /usr/local/include/GL_bak
+
 sudo ln -s /opt/X11/include/GL /usr/local/include/GL
 
 change of repo:
 
 1.cmake file line 348 add
+
 LIST(APPEND LIBS /opt/X11/lib/libGL.dylib)
 
 2.fg_glutfont_definitions_x11.c
+
 //struct freeglutBitmapFont glutBitmap8By13 ;
 last line add
 void* glutBitmap8By13 = NULL;
 
 3.smooth_opengl3.c
+
 line 106
 //#ifndef GL_VERSION_1_5
 //#endif
@@ -47,6 +56,7 @@ line 106
 //#endif
 
 4.shapes.c
+
 line 97
 //#ifndef GL_VERSION_2_0
 //#endif
