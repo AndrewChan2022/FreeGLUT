@@ -350,6 +350,9 @@ ELSEIF(BLACKBERRY)
     ENDIF()
 ENDIF()
 
+### macos
+LIST(APPEND LIBS /opt/X11/lib/libGL.dylib)
+
 INCLUDE(CheckFunctionExists)
 INCLUDE(CheckTypeSize)
 INCLUDE(CheckCCompilerFlag)
