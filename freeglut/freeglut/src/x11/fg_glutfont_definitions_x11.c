@@ -95,10 +95,11 @@ struct freeglutStrokeFont glutStrokeRoman ;
 struct freeglutStrokeFont glutStrokeMonoRoman ;
 
 struct freeglutBitmapFont glutBitmap9By15 ;
-struct freeglutBitmapFont glutBitmap8By13 ;
+//struct freeglutBitmapFont glutBitmap8By13 ;
 struct freeglutBitmapFont glutBitmapTimesRoman10 ;
 struct freeglutBitmapFont glutBitmapTimesRoman24 ;
 struct freeglutBitmapFont glutBitmapHelvetica10 ;
 struct freeglutBitmapFont glutBitmapHelvetica12 ;
 struct freeglutBitmapFont glutBitmapHelvetica18 ;
+void* glutBitmap8By13 = NULL;
 
