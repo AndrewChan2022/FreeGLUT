@@ -44,21 +44,29 @@ LIST(APPEND LIBS /opt/X11/lib/libGL.dylib)
 2.fg_glutfont_definitions_x11.c
 
 //struct freeglutBitmapFont glutBitmap8By13 ;
+
 last line add
+
 void* glutBitmap8By13 = NULL;
 
 3.smooth_opengl3.c
 
 line 106
+
 //#ifndef GL_VERSION_1_5
+
 //#endif
+
 //#ifndef GL_VERSION_2_0
+
 //#endif
 
 4.shapes.c
 
 line 97
+
 //#ifndef GL_VERSION_2_0
+
 //#endif
 
 
