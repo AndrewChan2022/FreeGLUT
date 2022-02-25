@@ -1,4 +1,4 @@
-FreeGLUT
+FreeGLUT for macos
 ========
 
 This readme file applies to the git clone of FreeGLUT's svn repo on [sourceforge.net](http://freeglut.sourceforge.net/) that is hosted on [github](https://github.com/dcnieho/FreeGLUT). This is provided here to enable user to contribute easier.
@@ -19,3 +19,37 @@ Notes to self on how to work with this:
   ``svn/trunk`` clone as extra meta data is added)
 - merge ``svn/trunk`` into local ``git_master``
 - push merge commit to github (its fast forward!)
+
+========
+system requirement
+brew install --cask xquartz
+sudo mv /usr/local/include/X11 /usr/local/include/X11_bak
+sudo ln -s /opt/X11/include/X11 /usr/local/include/X11
+        
+sudo mv /usr/local/include/GL /usr/local/include/GL_bak
+sudo ln -s /opt/X11/include/GL /usr/local/include/GL
+
+change of repo:
+
+1.cmake file line 348 add
+LIST(APPEND LIBS /opt/X11/lib/libGL.dylib)
+
+2.fg_glutfont_definitions_x11.c
+//struct freeglutBitmapFont glutBitmap8By13 ;
+last line add
+void* glutBitmap8By13 = NULL;
+
+3.smooth_opengl3.c
+line 106
+//#ifndef GL_VERSION_1_5
+//#endif
+//#ifndef GL_VERSION_2_0
+//#endif
+
+4.shapes.c
+line 97
+//#ifndef GL_VERSION_2_0
+//#endif
+
+
+
