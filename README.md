@@ -39,7 +39,8 @@ change of repo:
 
 1.cmake file line 348 add
 
-***  # # # macos
+***  ### macos
+
 LIST(APPEND LIBS /opt/X11/lib/libGL.dylib)
 
 2.fg_glutfont_definitions_x11.c
